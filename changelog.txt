@@ -1,0 +1,3 @@
+Tetris V0.1 (2019-03-03)
+- Alpha Early Release
+- Working on UI improvements in the upcoming update

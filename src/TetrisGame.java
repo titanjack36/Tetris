@@ -1,6 +1,6 @@
 //-----------------------------TETRIS GAME CLASS------------------------------//
 //@author TitanJack
-//@version 0.1 (2019-03-01)
+//@version 0.1 (2019-03-03)
 //Tetris is a puzzle game developed by Alexey Pajitnov in 1984. This is a
 //remake of the game coded independently by Titanjack. The Tetris logo and
 //designs for the game are properties of The Tetris Company, LCC and this
