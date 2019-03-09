@@ -1,3 +1,10 @@
+Tetris V0.2 (2019-03-08)
+- Added game levels and increasing tetris block drop speed
+- Added user interface with menu navigation
+- Added ability to dynamically scale/modify the size of the game window
+- Added game states including pause and game over
+- Improved game mechanics for smoother game play
+
 Tetris V0.1 (2019-03-03)
 - Alpha Early Release
 - Working on UI improvements in the upcoming update

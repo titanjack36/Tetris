@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Tetris:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="87569636-49cc-4cfc-839a-c7ef62e10c8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/MouseAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/TetrisGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Input/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Input/ButtonID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Input/InfoBoardInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Input/PageInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/DisclaimerScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/HelpScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/OptionsScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TetrisGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TetrisGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GameComponents/GameManager$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GameComponents/GameManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GameComponents/InfoBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GameComponents/PieceRandomizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GameComponents/PieceType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GameComponents/Tetromino$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GameComponents/Tetromino.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GridComponents/CellState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GridComponents/GameGrid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GridComponents/GridCell$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/GridComponents/GridCell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/TetrisGame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tetris/TetrisGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameComponents/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameComponents/InfoBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/InfoBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameComponents/PieceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/PieceType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameComponents/Tetromino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Tetromino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameComponents/TetrominoQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/TetrominoQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GridComponents/CellState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/CellState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GridComponents/GameGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GameGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GridComponents/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TetrisGame.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,39 +52,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameComponents/GameManager.java">
+        <entry file="file://$PROJECT_DIR$/src/Game/TetrisGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9288">
-              <caret line="346" selection-start-line="346" selection-end-line="346" />
+            <state relative-caret-position="665">
+              <caret line="187" column="46" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
               <folding>
-                <element signature="e#0#14582#0" expanded="true" />
+                <element signature="e#0#6200#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GridComponents/GridCell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="838">
-              <caret line="171" selection-start-line="171" selection-end-line="171" />
-              <folding>
-                <element signature="e#0#5622#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#388#423#0" expanded="true" />
-                <element signature="e#654#655#0" expanded="true" />
-                <element signature="e#715#716#0" expanded="true" />
+                <element signature="e#5872#5873#0" expanded="true" />
+                <element signature="e#5900#5901#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/TetrisGame.java">
+        <entry file="file://$PROJECT_DIR$/src/Game/InfoBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="297">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,84 +79,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tetris.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+        <entry file="file://$PROJECT_DIR$/src/Game/GameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameComponents/TetrominoQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="114" selection-start-line="114" selection-end-line="114" />
+            <state relative-caret-position="580">
+              <caret line="139" column="38" selection-start-line="139" selection-start-column="38" selection-end-line="139" selection-end-column="38" />
               <folding>
-                <element signature="e#0#4546#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameComponents/InfoBoard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="126" selection-start-line="126" selection-end-line="126" />
-              <folding>
-                <element signature="e#0#5217#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameComponents/Tetromino.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6453">
-              <caret line="239" column="58" selection-start-line="239" selection-start-column="58" selection-end-line="239" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#6712#0" expanded="true" />
-                <element signature="e#476#477#0" expanded="true" />
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#5672#5673#0" expanded="true" />
-                <element signature="e#5706#5707#0" expanded="true" />
-                <element signature="e#6500#6501#0" expanded="true" />
-                <element signature="e#6533#6534#0" expanded="true" />
-                <element signature="e#6658#6659#0" expanded="true" />
-                <element signature="e#6706#6707#0" expanded="true" />
-                <element signature="e#6837#6838#0" expanded="true" />
-                <element signature="e#6885#6886#0" expanded="true" />
-                <element signature="e#7906#7907#0" expanded="true" />
-                <element signature="e#7939#7940#0" expanded="true" />
-                <element signature="e#7973#7974#0" expanded="true" />
-                <element signature="e#8005#8006#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameComponents/PieceType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GridComponents/CellState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -159,7 +109,17 @@
       <find>System.out</find>
       <find>System.out.println</find>
       <find>true</find>
+      <find>int</find>
+      <find>deprec</find>
+      <find>deprecated</find>
+      <find>repaint</find>
+      <find>`</find>
+      <find>options screen</find>
     </findStrings>
+    <replaceStrings>
+      <replace>help screen</replace>
+      <replace>disclaimer screen</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -167,37 +127,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/BoxState.java" />
-        <option value="$PROJECT_DIR$/src/Square.java" />
-        <option value="$PROJECT_DIR$/src/LBlock.java" />
-        <option value="$PROJECT_DIR$/src/SquareBlock.java" />
-        <option value="$PROJECT_DIR$/src/GameBlock.java" />
-        <option value="$PROJECT_DIR$/src/GameBlocks/SquareBlock.java" />
-        <option value="$PROJECT_DIR$/src/GameBlocks/LBlock.java" />
-        <option value="$PROJECT_DIR$/src/GameBlocks/BlockType.java" />
-        <option value="$PROJECT_DIR$/src/GameBlocks/PieceType.java" />
-        <option value="$PROJECT_DIR$/src/GameBlocks/GameBlock.java" />
-        <option value="$PROJECT_DIR$/src/GameBlocks/Tetromino.java" />
-        <option value="$PROJECT_DIR$/src/GridBox.java" />
-        <option value="$PROJECT_DIR$/src/CellState.java" />
-        <option value="$PROJECT_DIR$/src/Tetromino.java" />
-        <option value="$PROJECT_DIR$/src/TetrominoRandomizer.java" />
-        <option value="$PROJECT_DIR$/src/InfoBoard.java" />
-        <option value="$PROJECT_DIR$/src/GridCell.java" />
         <option value="$PROJECT_DIR$/src/GameManager.java" />
         <option value="$PROJECT_DIR$/src/GameGrid.java" />
         <option value="$PROJECT_DIR$/src/PieceRandomizer.java" />
         <option value="$PROJECT_DIR$/src/GameComponents/PieceRandomizer.java" />
-        <option value="$PROJECT_DIR$/src/GameComponents/InfoBoard.java" />
-        <option value="$PROJECT_DIR$/src/GameComponents/TetrominoQueue.java" />
-        <option value="$PROJECT_DIR$/src/GridComponents/GridCell.java" />
-        <option value="$PROJECT_DIR$/src/GridComponents/GameGrid.java" />
-        <option value="$PROJECT_DIR$/src/GameComponents/GameManager.java" />
-        <option value="$PROJECT_DIR$/src/GameComponents/Tetromino.java" />
         <option value="$PROJECT_DIR$/src/GameComponents/PieceType.java" />
         <option value="$PROJECT_DIR$/src/GridComponents/CellState.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/GameComponents/Tetromino.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/TetrominoQueue.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/TopMenu.java" />
+        <option value="$PROJECT_DIR$/src/GridComponents/GridCell.java" />
+        <option value="$PROJECT_DIR$/src/GridComponents/GameGrid.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/GameManager.java" />
         <option value="$PROJECT_DIR$/src/TetrisGame.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/GameState.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/InfoBoard.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/TetrisGame.java" />
+        <option value="$PROJECT_DIR$/src/Buttons.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/ButtonID.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/Buttons.java" />
+        <option value="$PROJECT_DIR$/src/GameComponents/ButtonHandler.java" />
+        <option value="$PROJECT_DIR$/src/Buttons/ButtonState.java" />
+        <option value="$PROJECT_DIR$/src/Game/MouseAction.java" />
+        <option value="$PROJECT_DIR$/src/Game/Tetromino.java" />
+        <option value="$PROJECT_DIR$/src/Grid/GridCell.java" />
+        <option value="$PROJECT_DIR$/src/Game/TetrominoQueue.java" />
+        <option value="$PROJECT_DIR$/src/Game/GameScreen.java" />
+        <option value="$PROJECT_DIR$/src/Game/OptionsScreen.java" />
+        <option value="$PROJECT_DIR$/src/Buttons/ButtonID.java" />
+        <option value="$PROJECT_DIR$/src/Buttons/ButtonHandler.java" />
+        <option value="$PROJECT_DIR$/src/Buttons/ButtonHandlerAlt.java" />
+        <option value="$PROJECT_DIR$/src/Buttons/Button.java" />
+        <option value="$PROJECT_DIR$/src/Buttons/InfoBoardInput.java" />
+        <option value="$PROJECT_DIR$/src/Buttons/PageInput.java" />
+        <option value="$PROJECT_DIR$/src/Buttons/ButtonAlt.java" />
+        <option value="$PROJECT_DIR$/src/Input/ButtonHandler.java" />
+        <option value="$PROJECT_DIR$/src/Input/ButtonAlt.java" />
+        <option value="$PROJECT_DIR$/src/Game/GameState.java" />
+        <option value="$PROJECT_DIR$/src/Grid/GameGrid.java" />
+        <option value="$PROJECT_DIR$/src/Pages/PageScreen.java" />
+        <option value="$PROJECT_DIR$/src/Input/InfoBoardInput.java" />
+        <option value="$PROJECT_DIR$/src/Input/ButtonID.java" />
+        <option value="$PROJECT_DIR$/src/Input/Button.java" />
+        <option value="$PROJECT_DIR$/src/Pages/OptionsScreen.java" />
+        <option value="$PROJECT_DIR$/src/Pages/HelpScreen.java" />
+        <option value="$PROJECT_DIR$/src/Pages/DisclaimerScreen.java" />
+        <option value="$PROJECT_DIR$/src/Input/PageInput.java" />
+        <option value="$PROJECT_DIR$/changelog.txt" />
+        <option value="$PROJECT_DIR$/src/Game/GameManager.java" />
+        <option value="$PROJECT_DIR$/src/Game/TetrisGame.java" />
+        <option value="$PROJECT_DIR$/src/Game/InfoBoard.java" />
       </list>
     </option>
   </component>
@@ -207,10 +187,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="297" />
-    <option name="width" value="312" />
-    <option name="height" value="333" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="166" />
+    <option name="width" value="176" />
+    <option name="height" value="189" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -218,6 +198,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,28 +216,39 @@
               <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tetris" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GameComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tetris" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GridComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="Grid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tetris" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tetris" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551622542630" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552094195058" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -271,7 +264,7 @@
   </component>
   <component name="RunManager">
     <configuration name="TetrisGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TetrisGame" />
+      <option name="MAIN_CLASS_NAME" value="Game.TetrisGame" />
       <module name="Tetris" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -298,26 +291,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49843994" visible="true" weight="0.101789266" />
-      <window_info id="Structure" order="1" sideWeight="0.5015601" side_tool="true" weight="0.100238666" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49181604" visible="true" weight="0.12723657" />
+      <window_info id="Structure" order="1" sideWeight="0.50818396" side_tool="true" visible="true" weight="0.12723657" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32977462" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4793453" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.56109136" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969603" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.47077164" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5604053" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32740214" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32657832" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32977462" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24948454" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -327,34 +320,6 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49843994" visible="true" weight="0.100994036" />
-      <window_info id="Structure" order="1" sideWeight="0.5015601" side_tool="true" weight="0.100238666" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32977462" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4793453" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.56109136" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32740214" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24948454" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.3298969" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout-to-restore>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -393,106 +358,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameComponents.java" />
-    <entry file="file://$PROJECT_DIR$/src/GridComponents/GameGrid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="177" selection-start-line="177" selection-end-line="177" />
-          <folding>
-            <element signature="e#0#7246#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#4719#4720#0" expanded="true" />
-            <element signature="e#4771#4772#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GridComponents/GridCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="171" selection-start-line="171" selection-end-line="171" />
-          <folding>
-            <element signature="e#0#5622#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#388#423#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameComponents/TetrominoQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-          <folding>
-            <element signature="e#0#4546#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameComponents/InfoBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-          <folding>
-            <element signature="e#0#5217#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GridComponents/CellState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameComponents/PieceType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameComponents/Tetromino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6453">
-          <caret line="239" column="58" selection-start-line="239" selection-start-column="58" selection-end-line="239" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#6712#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#5672#5673#0" expanded="true" />
-            <element signature="e#5706#5707#0" expanded="true" />
-            <element signature="e#6500#6501#0" expanded="true" />
-            <element signature="e#6533#6534#0" expanded="true" />
-            <element signature="e#6658#6659#0" expanded="true" />
-            <element signature="e#6706#6707#0" expanded="true" />
-            <element signature="e#6837#6838#0" expanded="true" />
-            <element signature="e#6885#6886#0" expanded="true" />
-            <element signature="e#7906#7907#0" expanded="true" />
-            <element signature="e#7939#7940#0" expanded="true" />
-            <element signature="e#7973#7974#0" expanded="true" />
-            <element signature="e#8005#8006#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameComponents/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9288">
-          <caret line="346" selection-start-line="346" selection-end-line="346" />
-          <folding>
-            <element signature="e#0#14582#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tetris.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -500,10 +365,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TetrisGame.java">
+    <entry file="file://$PROJECT_DIR$/Tetris.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameComponents/TopMenu.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Dimension.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-377">
+          <caret line="97" column="11" selection-start-line="97" selection-start-column="11" selection-end-line="97" selection-end-column="11" />
+          <folding>
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2232#2233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Rectangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="433" column="7" lean-forward="true" selection-start-line="433" selection-start-column="7" selection-end-line="433" selection-end-column="7" />
+          <folding>
+            <element signature="e#12286#12287#0" expanded="true" />
+            <element signature="e#12330#12331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/event/ActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/GameScreen.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="4299" column="15" selection-start-line="4299" selection-start-column="15" selection-end-line="4299" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Input/ButtonHandlerAlt.java" />
+    <entry file="file://$PROJECT_DIR$/src/Input/ButtonHandler.java" />
+    <entry file="file://$PROJECT_DIR$/src/Pages/PageScreen.java" />
+    <entry file="file://$PROJECT_DIR$/src/Game/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/MouseAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/PieceType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Tetromino.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5302">
+          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/TetrominoQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grid/CellState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grid/GameGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-928">
+          <caret line="179" column="12" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grid/GridCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2521">
+          <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5300#5301#0" expanded="true" />
+            <element signature="e#5337#5338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Input/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Input/ButtonID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Input/PageInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pages/DisclaimerScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#4208#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pages/HelpScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#4147#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pages/OptionsScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Input/InfoBoardInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4168">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#9243#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/changelog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="139" column="38" selection-start-line="139" selection-start-column="38" selection-end-line="139" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/TetrisGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="187" column="46" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#6200#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5872#5873#0" expanded="true" />
+            <element signature="e#5900#5901#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/InfoBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -516,10 +589,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Tetris:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
