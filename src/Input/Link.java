@@ -130,8 +130,8 @@ public class Link extends JPanel {
     public void paint(Graphics g) {
         if (linkHovered) {
             for (double[] coords : linkBounds) {
-                g.drawLine((int)coords[0], (int)(coords[1] + coords[3]),
-                        (int)(coords[0] + coords[2]), (int)(coords[1] +
+                g.drawLine((int) coords[0], (int) (coords[1] + coords[3]),
+                        (int) (coords[0] + coords[2]), (int) (coords[1] +
                                 coords[3]));
             }
         }

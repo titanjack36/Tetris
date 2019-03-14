@@ -80,7 +80,7 @@ public class MouseActionHandler {
                     //Mouse key has been released
                     if (action.equals(MouseAction.RELEASE)) {
                         if (btn.getOnClickState() == null) {
-                            handleOnClickFunction(btn);
+                            handleOnClickFunction(btn, btns);
                         } else {
                             if (btn.getOnClickState().equals(GameState.STOP))
                                 System.exit(0);
@@ -172,11 +172,16 @@ public class MouseActionHandler {
     //@param btn            the button that has been clicked
     //Executes specified actions for each type of button that does not have
     //an target game state as it's on click action.
-    public void handleOnClickFunction(Button btn) {
+    public void handleOnClickFunction(Button btn, Button[] btns) {
         switch (btn.getID()) {
             case SOUNDTOGGLE:
-                if (btn.isAltState()) TetrisGame.setSoundState(true);
-                else TetrisGame.setSoundState(false);
+                boolean muteSound = btn.isAltState();
+                TetrisGame.setSoundState(muteSound);
+                for (Button loopedBtn: btns) {
+                    if (loopedBtn.getID().equals(ButtonID.SOUNDTOGGLE)) {
+                        loopedBtn.setAltState(!muteSound);
+                    }
+                }
         }
     }
 }

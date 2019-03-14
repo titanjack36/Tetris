@@ -46,6 +46,8 @@ public class InfoBoardInput extends JPanel implements PageInput {
 
             new Button(this, posY + 100, "Pause Game",
                 ButtonID.PAUSE_GAME, GameState.INGAME, GameState.PAUSED),
+            new Button(this, posY + height - 50, "Sound On",
+                "Sound Off", ButtonID.SOUNDTOGGLE, GameState.INGAME),
 
             new Button(this, posY + 100, "Resume Game",
                 ButtonID.RESUME_GAME, GameState.PAUSED, GameState.INGAME),
@@ -59,6 +61,8 @@ public class InfoBoardInput extends JPanel implements PageInput {
                 ButtonID.MAIN_MENU, GameState.PAUSED, GameState.MAINMENU),
             new Button(this, posY + 480, "Quit",
                 ButtonID.QUIT, GameState.PAUSED, GameState.STOP),
+            new Button(this, posY + height - 50, "Sound On",
+                "Sound Off", ButtonID.SOUNDTOGGLE, GameState.PAUSED),
 
             new Button(this, posY + 100, "Back",
                 ButtonID.BACK, GameState.OPTIONSSCREEN, GameState.LASTSTATE),
@@ -67,6 +71,9 @@ public class InfoBoardInput extends JPanel implements PageInput {
                     GameState.MAINMENU),
             new Button(this, posY + 270, "Quit",
                 ButtonID.QUIT, GameState.OPTIONSSCREEN, GameState.STOP),
+            new Button(this, posY + height - 50, "Sound On",
+                "Sound Off", ButtonID.SOUNDTOGGLE,
+                    GameState.OPTIONSSCREEN),
 
             new Button(this, posY + 100, "Back",
                 ButtonID.BACK, GameState.HELPSCREEN, GameState.LASTSTATE),
@@ -74,6 +81,8 @@ public class InfoBoardInput extends JPanel implements PageInput {
                 ButtonID.MAIN_MENU, GameState.HELPSCREEN, GameState.MAINMENU),
             new Button(this, posY + 270, "Quit",
                 ButtonID.QUIT, GameState.HELPSCREEN, GameState.STOP),
+            new Button(this, posY + height - 50, "Sound On",
+                "Sound Off", ButtonID.SOUNDTOGGLE, GameState.HELPSCREEN),
 
             new Button(this, posY + 100, "Back",
                 ButtonID.BACK, GameState.ABOUTSCREEN, GameState.LASTSTATE),
@@ -81,13 +90,17 @@ public class InfoBoardInput extends JPanel implements PageInput {
                 ButtonID.MAIN_MENU, GameState.ABOUTSCREEN, GameState.MAINMENU),
             new Button(this, posY + 270, "Quit",
                 ButtonID.QUIT, GameState.ABOUTSCREEN, GameState.STOP),
+            new Button(this, posY + height - 50, "Sound On",
+                "Sound Off", ButtonID.SOUNDTOGGLE, GameState.ABOUTSCREEN),
 
             new Button(this, posY + 100, "New Game",
                 ButtonID.NEW_GAME, GameState.GAMEOVER, GameState.NEWGAME),
             new Button(this, posY + 200, "Main Menu",
                 ButtonID.MAIN_MENU, GameState.GAMEOVER, GameState.MAINMENU),
             new Button(this, posY + 270, "Quit",
-                ButtonID.QUIT, GameState.GAMEOVER, GameState.STOP)
+                ButtonID.QUIT, GameState.GAMEOVER, GameState.STOP),
+            new Button(this, posY + height - 50, "Sound On",
+                "Sound Off", ButtonID.SOUNDTOGGLE, GameState.GAMEOVER)
         };
         //Set the buttons to move dynamically
         for (Button btn: btns) {

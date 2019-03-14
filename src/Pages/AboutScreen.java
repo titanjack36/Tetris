@@ -59,9 +59,9 @@ public class AboutScreen extends JPanel {
         g.setColor(new Color(114, 114, 114));
         g.setFont(new Font("Arial", Font.BOLD, 40));
         String text = "About";
-        textField.setDimensions(posX, posY + renderPosY, width);
-        textField.setText(text, g);
-        textField.paint(g);
+        //textField.setDimensions(posX, posY + renderPosY, width);
+        //textField.setText(text, g);
+        //textField.paint(g);
 
         renderPosY += textField.getHeight() + 50;
         textField.setDimensions(posX, posY + renderPosY, width);

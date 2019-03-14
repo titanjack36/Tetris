@@ -271,10 +271,14 @@ public class Button extends JPanel{
     //Records whether the button is clicked and executes internal actions if
     //clicked
     public void setClicked(boolean isClicked) {
-        if (!isClicked && this.isClicked && altText != null) {
-            altState = !altState;
-        }
         this.isClicked = isClicked;
+    }
+
+    //Function: Set Alt State
+    //@param altState           whether the button is in alternate/clicked state
+    //Changes the button state to the specified state
+    public void setAltState(boolean altState) {
+        this.altState = altState;
     }
 
     //Function: Set Horizontal Fixed
