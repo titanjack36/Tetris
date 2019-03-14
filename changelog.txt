@@ -1,3 +1,10 @@
+Tetris V0.3 (2019-03-13)
+- Added a timed buffer so the block would not drop instantly upon spawn
+- Added about page and background music
+- Fixed the increasing tetris block drop speed function not being functional
+- Fixed issues with block rotations crashing the game, improved algorithm
+  now allows players to perform rotations in tight spaces
+
 Tetris V0.2 (2019-03-08)
 - Added game levels and increasing tetris block drop speed
 - Added user interface with menu navigation

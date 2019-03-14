@@ -173,20 +173,22 @@ public class InfoBoard extends JPanel {
         super.paintComponent(g);
         g.setColor(new Color(114, 114, 114));
         g.setFont(new Font("Arial", Font.BOLD, 50));
-        g.drawString("TETRIS V0.2", (int) (posX + 20),
+        g.drawString("TETRIS", (int) (posX + 20),
                 (int) (posY + 70));
 
         infoBoardInput.paint(g);
-        if (TetrisGame.getGameState().equals(GameState.INGAME)) {
-            pieceQueue[0].paint(g);
-            pieceQueue[1].paint(g);
-
+        if (TetrisGame.getGameState().equals(GameState.INGAME) ||
+            TetrisGame.getGameState().equals(GameState.GAMEOVER)) {
             g.setColor(new Color(114, 114, 114));
             g.setFont(new Font("Arial", Font.BOLD, 35));
             g.drawString("Score  " + TetrisGame.getScore(), (int)(posX + 50),
                     (int) (posY + 610));
             g.drawString("Level  " + TetrisGame.getGameLevel(),
                     (int) (posX + 50), (int) (posY + 680));
+        }
+        if (TetrisGame.getGameState().equals(GameState.INGAME)) {
+            pieceQueue[0].paint(g);
+            pieceQueue[1].paint(g);
         }
     }
 

@@ -9,6 +9,8 @@
 package Game;
 
 import Grid.GameGrid;
+import Pages.AboutScreen;
+import Pages.DisclaimerScreen;
 import Pages.HelpScreen;
 import Pages.OptionsScreen;
 
@@ -28,9 +30,12 @@ public class GameManager extends JPanel {
     private int renderCycle;
 
     private GameGrid grid;
+    private DisclaimerScreen disclaimerScreen;
     private OptionsScreen optionsScreen;
     private HelpScreen helpScreen;
+    private AboutScreen aboutScreen;
     private InfoBoard infoBoard;
+
     private Tetromino currentPiece;
     private Tetromino projectedPiece;
     private TetrominoQueue nextPieces;
@@ -53,8 +58,10 @@ public class GameManager extends JPanel {
         this.height = height;
         grid = new GameGrid(posX, posY, width - 500, height,
                 cellSize, rows, cols);
+        disclaimerScreen = new DisclaimerScreen(posX, posY, width, height);
         optionsScreen = new OptionsScreen(posX, posY, width - 500, height);
         helpScreen = new HelpScreen(posX, posY, width - 500, height);
+        aboutScreen = new AboutScreen(posX, posY, width - 500, height);
         infoBoard = new InfoBoard(width - 500, posY, 400, height);
         renderCycle = 0;
         debug = false;
@@ -88,9 +95,9 @@ public class GameManager extends JPanel {
                 //Reset everything and go to the ingame state
                 grid.clearAllGridCells();
                 nextPieces = new TetrominoQueue();
-                TetrisGame.restartGame();
-                TetrisGame.setGameState(GameState.INGAME);
+                TetrisGame.startGame();
                 currentPiece = null;
+                TetrisGame.setGameState(GameState.INGAME);
                 repaint();
                 break;
             case PAUSED:
@@ -114,16 +121,8 @@ public class GameManager extends JPanel {
             //grid
             currentPiece.simulateMove(direction);
             int[][] pieceCoords = currentPiece.getCoords();
-            boolean hitObstacle = false;
             //Check for collision for each individual block for the tetris piece
-            for (int[] coord : pieceCoords) {
-                int row = coord[0], col = coord[1];
-                hitObstacle = hitObstacle ||
-                              ((direction.equals("down") && row == rows) ||
-                              (direction.equals("left") && col < 0) ||
-                              (direction.equals("right") && col >= cols))
-                               || grid.isInactive(row, col);
-            }
+            boolean hitObstacle = isOverlapping(pieceCoords);
             //Revert position back to before the simulated move
             currentPiece.resetSimulation();
             pieceCoords = currentPiece.getCoords();
@@ -162,59 +161,32 @@ public class GameManager extends JPanel {
         updateGame();
         if (TetrisGame.getGameState().equals(GameState.INGAME)) {
             int[][] originalCoords = currentPiece.getCoords();
-            //Perform virtual rotation and scan for overlapping areas
+            int originalRow = currentPiece.getRow();
+            int originalCol = currentPiece.getCol();
             currentPiece.simulateRotate();
-            int[][] pieceCoords = currentPiece.getCoords();
-            boolean leftConflict, rightConflict, bottomConflict, topConflict;
-            do {
-                //Specifies where the overlapping occurs with respect to the
-                //center of the tetris piece
-                leftConflict = rightConflict = bottomConflict = topConflict
-                        = false;
-                for (int[] coord : pieceCoords) {
-                    int row = coord[0], col = coord[1];
-                    if (row < 0 || row >= rows || col < 0 || col >= cols ||
-                            grid.isInactive(row, col)) {
-                        topConflict = topConflict ||
-                                row <= currentPiece.getRow();
-                        bottomConflict = bottomConflict ||
-                                row > currentPiece.getRow();
-                        leftConflict = leftConflict ||
-                                col <= currentPiece.getCol();
-                        rightConflict = rightConflict ||
-                                col > currentPiece.getCol();
-                        //centerConflict = centerConflict || (col == currentPiece
-                        //        .getCol() && row == currentPiece.getRow() ||
-                        //        currentPiece.getCol() < 0 || currentPiece.
-                        //        getCol() >= cols || currentPiece.getRow() < 0
-                        //        || currentPiece.getRow() >= rows);
-                    }
-                }
-                if (debug) {
-                    System.out.println("row: " + currentPiece.getRow() +
-                            " column: " + currentPiece.getCol());
-                    System.out.println("left: " + leftConflict + " right: " +
-                            rightConflict + " bottom: " + bottomConflict +
-                            " top: " + topConflict);
-                }
-                //if (!centerConflict) {
-                    //The tetris piece will move the opposite way to the
-                    //overlapping side in order to avoid it
-                    if (leftConflict && !rightConflict)
-                        currentPiece.simulateMove("right");
-                    else if (rightConflict && !leftConflict)
-                        currentPiece.simulateMove("left");
-                    pieceCoords = currentPiece.getCoords();
-                //}
-                //If the two opposite sides are both overlapping existing
-                //blocks, then the rotation cannot be performed at all
-            } while(/*!centerConflict && */((leftConflict ^ rightConflict)));
 
-            //If the rotation or resultant simulated moves allow the tetris
-            //piece to not overlap any existing blocks, then apply the
-            //rotation and translations
-            if (!(/*centerConflict || */leftConflict || topConflict ||
-                    bottomConflict)) {
+            int rowIndex = 0, colIndex;
+            boolean fitIn = false;
+            int[][] pieceCoords = null;
+
+            //Checks a 5 by 5 area around the tetris piece to see if there are
+            //any places it could fit in. The search starts from the center and
+            //goes outwards.
+            while (!fitIn && rowIndex <= 2) {
+                colIndex = 0;
+                while (!fitIn && colIndex <= 2) {
+                    currentPiece.setSimulatedPosition(originalRow +
+                            rowIndex, originalCol + colIndex);
+                    pieceCoords = currentPiece.getCoords();
+                    if (!isOverlapping(pieceCoords)) fitIn = true;
+                    if (colIndex > 0) colIndex = -colIndex;
+                    else colIndex = -colIndex + 1;
+                }
+                if (rowIndex > 0) rowIndex = -rowIndex;
+                else rowIndex = -rowIndex + 1;
+            }
+
+            if (fitIn) {
                 for (int[] coord : originalCoords)
                     grid.setEmpty(coord[0], coord[1]);
                 for (int[] coord: pieceCoords)
@@ -222,8 +194,9 @@ public class GameManager extends JPanel {
                 currentPiece.applySimulation();
                 displayProjection();
                 repaint();
-            } else
+            } else {
                 currentPiece.resetSimulation();
+            }
         }
     }
 
@@ -271,6 +244,7 @@ public class GameManager extends JPanel {
         }
         repaint();
         displayProjection();
+        TetrisGame.initiateBuffer();
         return blocked;
     }
 
@@ -361,7 +335,24 @@ public class GameManager extends JPanel {
         repaint();
     }
 
-    //---------------------------MISC FUNCTIONS-------------------------------//
+    //----------------------------ASSIST FUNCTION-----------------------------//
+    //Function: Is Overlapping
+    //@param pieceCoords        coordinates of all the blocks in the tetris
+    //                          piece
+    //@return                   whether the blocks in the tetris piece are
+    //                          overlapping existing blocks
+    private boolean isOverlapping(int[][] pieceCoords) {
+        boolean overlapping = false;
+        //Check for collision for each individual block for the tetris piece
+        for (int[] coord : pieceCoords) {
+            int row = coord[0], col = coord[1];
+            overlapping = overlapping || row >= rows || col < 0 ||
+                    col >= cols || grid.isInactive(row, col);
+        }
+        return overlapping;
+    }
+
+    //-----------------------------MISC FUNCTIONS-----------------------------//
     //FUNCTION LIST:
     //public void setDebug(boolean debug)
     //public void mouseAction(double posX, double posY, double offsetX,
@@ -386,10 +377,13 @@ public class GameManager extends JPanel {
     //       offsetX        the width of the window border at the left
     //       offsetY        the width of the window border at the top
     //       action         the action of the mouse: [hover/click/release]
-    //Relays the position and action of the mouse to be handled by the input
-    //handlers for each page that is currently displayed
+    //Relays the position and action of the mouse to be handled by the mouse
+    //input handlers for each page that is currently displayed
     public void mouseAction(double posX, double posY, double offsetX,
                             double offsetY, MouseAction action) {
+        if (TetrisGame.getGameState().equals(GameState.ABOUTSCREEN)) {
+            aboutScreen.mouseAction(posX, posY, offsetX, offsetY, action);
+        }
         infoBoard.mouseAction(posX, posY, offsetX, offsetY, action);
     }
 
@@ -413,8 +407,10 @@ public class GameManager extends JPanel {
         this.height = height;
         grid.setGridSize(posX + (width - 500) / 2 -
                 grid.getGridWidth() / 2, posY, width - 500, height);
+        disclaimerScreen.setDimensions(posX, posY, width, height);
         optionsScreen.setDimensions(posX, posY, width - 500, height);
         helpScreen.setDimensions(posX, posY, width - 500, height);
+        aboutScreen.setDimensions(posX, posY, width - 500, height);
         infoBoard.setDimensions(width - 500, posY, 400, height);
     }
 
@@ -438,11 +434,16 @@ public class GameManager extends JPanel {
                 break;
             case HELPSCREEN: helpScreen.paint(g);
                 break;
+            case ABOUTSCREEN: aboutScreen.paint(g);
+                break;
             default: grid.paint(g);
                 break;
         }
         infoBoard.paint(g);
 
+        if (TetrisGame.getGameState().equals(GameState.DISCLAIMER)) {
+            disclaimerScreen.paint(g);
+        }
         if (TetrisGame.getGameState().equals(GameState.GAMEOVER)) {
             int boxPosX = (int)(posX + (width - 500) / 2 - 150);
             int boxPosY = (int)(posY + height / 2 - 100);

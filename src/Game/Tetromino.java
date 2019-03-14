@@ -220,8 +220,18 @@ public class Tetromino {
     //Directly updates the position values of the tetris piece
     public void setPosition(int row, int col) {
 
+        simulation = false;
         this.row = row;
         this.col = col;
+    }
+
+    public void setSimulatedPosition(int row, int col) {
+        if (!simulation) {
+            simulation = true;
+            simOrientation = orientation;
+        }
+        simRow = row;
+        simCol = col;
     }
 
     //Function: Is Simulated

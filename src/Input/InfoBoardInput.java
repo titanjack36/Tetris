@@ -23,13 +23,13 @@ public class InfoBoardInput extends JPanel implements PageInput {
     private double posY;
     private double height;
     private double width;
-    private static ButtonID hoverButton;
-    private static ButtonID clickedButton;
+    private MouseActionHandler mouseActionHandler;
 
     public InfoBoardInput(double posX, double posY, double width,
                           double height) {
 
         setDimensions(posX, posY, width, height);
+        mouseActionHandler = new MouseActionHandler();
         btns = new Button[]{
             new Button(this, posY + 100,"New Game",
                 ButtonID.NEW_GAME, GameState.MAINMENU, GameState.NEWGAME),
@@ -37,8 +37,12 @@ public class InfoBoardInput extends JPanel implements PageInput {
                 ButtonID.HOW_TO_PLAY, GameState.MAINMENU, GameState.HELPSCREEN),
             new Button(this, posY + 270,"Options",
                 ButtonID.OPTIONS, GameState.MAINMENU, GameState.OPTIONSSCREEN),
-            new Button(this, posY + 340,"Quit",
+            new Button(this, posY + 340, "About",
+                ButtonID.ABOUT, GameState.MAINMENU, GameState.ABOUTSCREEN),
+            new Button(this, posY + 410,"Quit",
                 ButtonID.QUIT, GameState.MAINMENU, GameState.STOP),
+            new Button(this, posY + height - 50, "Sound On",
+                "Sound Off", ButtonID.SOUNDTOGGLE, GameState.MAINMENU),
 
             new Button(this, posY + 100, "Pause Game",
                 ButtonID.PAUSE_GAME, GameState.INGAME, GameState.PAUSED),
@@ -71,6 +75,13 @@ public class InfoBoardInput extends JPanel implements PageInput {
             new Button(this, posY + 270, "Quit",
                 ButtonID.QUIT, GameState.HELPSCREEN, GameState.STOP),
 
+            new Button(this, posY + 100, "Back",
+                ButtonID.BACK, GameState.ABOUTSCREEN, GameState.LASTSTATE),
+            new Button(this, posY + 200, "Main Menu",
+                ButtonID.MAIN_MENU, GameState.ABOUTSCREEN, GameState.MAINMENU),
+            new Button(this, posY + 270, "Quit",
+                ButtonID.QUIT, GameState.ABOUTSCREEN, GameState.STOP),
+
             new Button(this, posY + 100, "New Game",
                 ButtonID.NEW_GAME, GameState.GAMEOVER, GameState.NEWGAME),
             new Button(this, posY + 200, "Main Menu",
@@ -78,7 +89,27 @@ public class InfoBoardInput extends JPanel implements PageInput {
             new Button(this, posY + 270, "Quit",
                 ButtonID.QUIT, GameState.GAMEOVER, GameState.STOP)
         };
+        //Set the buttons to move dynamically
+        for (Button btn: btns) {
+            btn.setHorizontalSlide(true);
+            if (btn.getID().equals(ButtonID.SOUNDTOGGLE))
+                btn.setVerticalSlide(true);
+        }
     }
+
+    //-----------------------------MISC FUNCTIONS-----------------------------//
+    //FUNCTION LIST:
+    //public void mouseAction(double mousePosX, double mousePosY,
+    //                            double offsetX, double offsetY,
+    //                            MouseAction action)
+    //public void setDimensions(double posX, double posY, double width,
+    //                              double height)
+    //public void setDimensions(double width, double height)
+    //public double getPagePosX()
+    //public double getPagePosY()
+    //public double getPageWidth()
+    //public double getPageHeight()
+    //public void paint(Graphics g)
 
     //Function: Mouse Action
     //@param posX           the x pos of the mouse
@@ -86,75 +117,13 @@ public class InfoBoardInput extends JPanel implements PageInput {
     //       offsetX        the width of the window border at the left
     //       offsetY        the width of the window border at the top
     //       action         the action of the mouse: [hover/click/release]
-    //Evaluates the position of the mouse in order to determine whether
-    //it is interacting with any of the buttons displayed on the screen.
-    //If the mouse is hovering or clicking on a button, it will be recorded
-    //and the game state will be changed once a button is clicked and released
+    //Relays the position and action of the mouse to be handled by the mouse
+    //action handler
     public void mouseAction(double mousePosX, double mousePosY,
-                                           double offsetX, double offsetY,
-                                           MouseAction action) {
-
-        boolean btnFound = false;
-        for (Button btn : btns) {
-            if (!btnFound && btn.getBtnPageState().equals(
-                    TetrisGame.getGameState())) {
-                //Evaluates mouse position using the boundaries of the button
-                boolean isTouching = mousePosX > btn.getBtnX() + offsetX
-                        && mousePosY > btn.getBtnY() + offsetY
-                        && mousePosX < btn.getBtnX() + btn.getBtnWidth() +
-                        offsetX
-                        && mousePosY < btn.getBtnY() + btn.getBtnHeight() +
-                        offsetY;
-
-                if (isTouching) {
-                    //Mouse is touching a button but does not click
-                    if (action.equals(MouseAction.HOVER)) {
-                        if (!btn.getID().equals(hoverButton)) {
-                            hoverButton = btn.getID();
-                            TetrisGame.repaintGame();
-                        }
-                        clickedButton = null;
-                    }
-                    //Mouse has clicked but not released
-                    if (action.equals(MouseAction.CLICK)) {
-                        if (!btn.getID().equals(clickedButton)) {
-                            clickedButton = btn.getID();
-                            TetrisGame.repaintGame();
-                        }
-                        hoverButton = null;
-                    }
-                    //Mouse key has been released
-                    if (action.equals(MouseAction.RELEASE)) {
-                        if (btn.getOnClickState().equals(GameState.STOP))
-                            System.exit(0);
-                        else if (btn.getOnClickState().equals(
-                                GameState.LASTSTATE))
-                            //Return to the last page visited by the player
-                            TetrisGame.setGameState(
-                                    TetrisGame.getLastGameState());
-                        else {
-                            //Clear the grid when returning to menu
-                            if (btn.getOnClickState().equals(
-                                    GameState.MAINMENU))
-                                TetrisGame.resetGameGrid();
-                            TetrisGame.setGameState(btn.getOnClickState());
-                        }
-                        TetrisGame.repaintGame();
-                        clickedButton = null;
-                        hoverButton = null;
-                    }
-                    btnFound = true;
-                } else {
-                    //Reset clicked and hover button when mouse is no longer
-                    //touching any buttons
-                    if (clickedButton != null || hoverButton != null) {
-                        clickedButton = null;
-                        hoverButton = null;
-                        TetrisGame.repaintGame();
-                    }
-                }
-            }
-        }
+                            double offsetX, double offsetY,
+                            MouseAction action) {
+        mouseActionHandler.mouseAction(mousePosX, mousePosY, offsetX, offsetY,
+                action, btns);
     }
 
     //Function: Set Dimensions
@@ -212,8 +181,9 @@ public class InfoBoardInput extends JPanel implements PageInput {
     public void paint(Graphics g) {
         for (Button btn : btns)
             if (btn.getBtnPageState().equals(TetrisGame.getGameState())) {
-                btn.setBounds(posX + 20, width * 0.8);
-                btn.paint(hoverButton, clickedButton, g);
+                btn.posFromLeft(20, this);
+                if (btn.isVerticalSlide()) btn.posFromBottom(50, this);
+                btn.paint(g);
             }
     }
 }
