@@ -127,6 +127,14 @@ public class TetrisGame {
             }
         });
 
+        window.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                System.exit(0);
+            }
+        });
+
         blockFallTimer = new Timer(breakInterval, null);
         blockFallTimer.addActionListener(e -> {
             //Allows the block to fall every second
@@ -219,6 +227,7 @@ public class TetrisGame {
     //Turns game sounds on or off
     public static void setSoundState(boolean isOn) {
         if (isOn) {
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
             clip.start();
         } else {
             clip.stop();
