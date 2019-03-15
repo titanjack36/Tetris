@@ -15,7 +15,8 @@ public class DisclaimerScreen extends JPanel {
     private double posY;
     private double width;
     private double height;
-    private TextField textField;
+    private TextField textTitle;
+    private TextField textBody;
 
     public DisclaimerScreen(double posX, double posY, double width,
                          double height) {
@@ -23,7 +24,14 @@ public class DisclaimerScreen extends JPanel {
         this.posY = posY;
         this.width = width;
         this.height = height;
-        textField = new TextField(posX, posY + 80, width);
+        textTitle = new TextField(posX, posY, width);
+        textTitle.setText("Disclaimer");
+        textBody = new TextField(posX, posY + 80, width);
+        String text = "The Tetris logo and designs for the game are " +
+                "properties of The Tetris Company, LCC and this open source " +
+                "remake is meant as a side project which is not commercial " +
+                "or meant for profit.\n\nPress any key to continue.";
+        textBody.setText(text);
     }
 
     //Function: Set Dimensions
@@ -53,6 +61,21 @@ public class DisclaimerScreen extends JPanel {
         double renderPosY = 80;
         g.setColor(new Color(255, 255, 255));
         g.setFont(new Font("Arial", Font.BOLD, 40));
+        textTitle.setDimensions(posX, posY + renderPosY, width);
+        textTitle.paint(g);
+
+        renderPosY += textTitle.getHeight() + 50;
+        textBody.setDimensions(posX, posY + renderPosY, width);
+        g.setFont(new Font("Arial", Font.BOLD, 27));
+        textBody.paint(g);
+
+        /*g.setColor(new Color(0, 0, 0, 200));
+        g.fillRect((int)posX, (int)posY, (int)width + 300,
+                (int)height + 300);
+
+        double renderPosY = 80;
+        g.setColor(new Color(255, 255, 255));
+        g.setFont(new Font("Arial", Font.BOLD, 40));
         String text = "Disclaimer";
         textField.setDimensions(posX, posY + renderPosY, width);
         textField.setText(text, g);
@@ -67,6 +90,6 @@ public class DisclaimerScreen extends JPanel {
                 "for profit.\n\nPress any key to continue.";
         textField.setText(text, g);
         textField.paint(g);
-
+*/
     }
 }

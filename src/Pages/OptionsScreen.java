@@ -15,11 +15,17 @@ public class OptionsScreen extends JPanel {
     private double posY;
     private double width;
     private double height;
-    private TextField textField;
+    private TextField textTitle;
+    private TextField textBody;
 
     public OptionsScreen(double posX, double posY, double width,
                          double height) {
         setDimensions(posX, posY, width, height);
+        textTitle = new TextField(posX, posY, width);
+        textTitle.setText("Options");
+        textBody = new TextField(posX, posY, width);
+        textBody.setText("Sorry, the options page is currently under " +
+                "construction");
     }
 
     //Function: Set Dimensions
@@ -34,7 +40,6 @@ public class OptionsScreen extends JPanel {
         this.posY = posY;
         this.width = width;
         this.height = height;
-        textField = new TextField(posX, posY + 80, width);
     }
 
     //Function: Paint
@@ -46,16 +51,12 @@ public class OptionsScreen extends JPanel {
         double renderPosY = 80;
         g.setColor(new Color(114, 114, 114));
         g.setFont(new Font("Arial", Font.BOLD, 40));
-        String text = "Options";
-        textField.setDimensions(posX, posY + renderPosY, width);
-        textField.setText(text, g);
-        textField.paint(g);
+        textTitle.setDimensions(posX, posY + renderPosY, width);
+        textTitle.paint(g);
 
-        renderPosY += textField.getHeight() + 50;
-        textField.setDimensions(posX, posY + renderPosY, width);
+        renderPosY += textTitle.getHeight() + 50;
+        textBody.setDimensions(posX, posY + renderPosY, width);
         g.setFont(new Font("Arial", Font.BOLD, 27));
-        text = "Sorry, the options page is currently under construction";
-        textField.setText(text, g);
-        textField.paint(g);
+        textBody.paint(g);
     }
 }

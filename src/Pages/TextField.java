@@ -214,6 +214,7 @@ public class TextField extends JPanel {
     //public void setDimensions(double posX, double posY, double width,
     //                              double height)
     //public void setDimensions(double posX, double posY, double width)
+    //public double getTextFieldHeight(Graphics g)
     //public void paint(Graphics g)
 
     //Function: Mouse Action
@@ -235,7 +236,7 @@ public class TextField extends JPanel {
     //       g              the graphics component
     //Checks the text for hyperlink tags before setting text to the plain text
     //version
-    public void setText(String text, Graphics g) {
+    public void setText(String text) {
         if (this.text == null || !this.text.equals(text)) {
             this.text = parseLinks(text);
         }
@@ -270,7 +271,7 @@ public class TextField extends JPanel {
     //Function Get Text Field Height
     //@param g              the graphics component
     //@return               the height of the text field, if the height is set
-    //                      dynamic, it will calcuate the total height of the
+    //                      dynamic, it will calculate the total height of the
     //                      rows of text
     public double getTextFieldHeight(Graphics g) {
         return freeHeight ? wrappedText.length * (g.getFontMetrics().
